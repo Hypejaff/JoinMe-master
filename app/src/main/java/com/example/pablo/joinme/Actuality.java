@@ -1,62 +1,33 @@
 package com.example.pablo.joinme;
 
-import android.app.LauncherActivity;
-import android.app.ListFragment;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
-import android.support.v4.app.FragmentManager ;
-
-
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import static android.R.id.list;
 
 /*
 This fragment will display the actuality so we use a list fragment
 */
 
 public class Actuality extends Fragment {
+    // OULA OULA
 
     private static final String URL = "https://joinme.000webhostapp.com/JoinMe-3.php";
     private RequestQueue requestQueue;
@@ -112,7 +83,6 @@ public class Actuality extends Fragment {
                     e.printStackTrace();
                     Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -123,8 +93,7 @@ public class Actuality extends Fragment {
                 topics = new String[]{"Error"};
                 levels = new String[]{"Error"};
                 times = new String[]{"Error"};
-
-
+                comments = new String[]{"Error"};
             }
         });
         requestQueue.add(request);
@@ -143,31 +112,23 @@ public class Actuality extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.refresh:
-
                 Toast.makeText(getActivity(), "Refresh", Toast.LENGTH_SHORT).show();
                 Afficher();
-                //txView.setText(places[2].toString());
                 ListView listView = (ListView) viewGroup.findViewById(R.id.list_fragment);
                 ArrayList<List_actuality> pays = new ArrayList<List_actuality>();
-                for (int i = 0; i < places.length; i++) {
-
+                for (int i = 0; i < places.length; i++)
+                {
                     pays.add(new List_actuality(places[i], times[i], topics[i],Integer.parseInt(levels[i]),comments[i]));
                 }
-
                 List_adapter list_adapter = new List_adapter(getContext(), pays);
-
                 listView.setAdapter(list_adapter);
-
                 return true;
             case R.id.settings:
-
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-
         }
     }
-
     // function to inverse an array
     public void reverse(String[] s)
     {
@@ -177,7 +138,6 @@ public class Actuality extends Fragment {
             String tableau = s[i];
             s[i] = s[s.length - i - 1];
             s[s.length - i - 1] = tableau;
-
         }
     }
 }
