@@ -3,10 +3,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Ceci est le fil d\'actualite</string>
-    <string name="Place">Place</string>
-    <string name="Topic">Topic</string>
-    <string name="Level">Studies\'s year </string>
-    <string name="Comment">Comment</string>
-    <string name="Time">Time</string>
+    <string name="Place">Place : </string>
+    <string name="Topic">Topic : </string>
+    <string name="Level">Studies\'s year : </string>
+    <string name="Comment">Comments : </string>
+    <string name="Time">Time : </string>
 
 </resources>
