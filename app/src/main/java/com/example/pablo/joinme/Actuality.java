@@ -27,7 +27,6 @@ This fragment will display the actuality so we use a list fragment
 */
 
 public class Actuality extends Fragment {
-    // OULA OULA
 
     private static final String URL = "https://joinme.000webhostapp.com/JoinMe-3.php";
     private RequestQueue requestQueue;

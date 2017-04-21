@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     public  static int SPLASH_TIME = 3000 ;
 
     TabLayout alltabs ;
-
     ViewPager viewPager ;
     Fragment fragment_1 ;
     Fragment fragment_2 ;
@@ -65,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
      */
     private void bindWidgetsWithAnEvent()
     {
-
-
         alltabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
