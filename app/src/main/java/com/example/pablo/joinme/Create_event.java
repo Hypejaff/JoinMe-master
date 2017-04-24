@@ -93,7 +93,7 @@ public class Create_event extends Fragment{
                     protected Map<String, String> getParams() throws AuthFailureError {
                         HashMap<String,String> hashMap = new HashMap<String, String>();
                         hashMap.put("comment",comment.getText().toString());
-                        hashMap.put("time",textViewHeure.getText().toString());                                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        hashMap.put("time",textViewHeure.getText().toString());
                         hashMap.put("level",textView.getText().toString());
                         hashMap.put("topic",topic.getText().toString());
                         hashMap.put("place",place.getText().toString());
