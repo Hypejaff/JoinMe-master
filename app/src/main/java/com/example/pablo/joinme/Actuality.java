@@ -1,5 +1,6 @@
 package com.example.pablo.joinme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 import java.util.ArrayList;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,15 +19,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.facebook.login.LoginManager;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import static android.widget.Toast.*;
 
-/*
-This fragment will display the actuality so we use a list fragment
-*/
+
 
 public class Actuality extends Fragment {
 
@@ -136,7 +134,6 @@ public class Actuality extends Fragment {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Toast.makeText(parent.getContext(),"coucou", Toast.LENGTH_SHORT).show();
 
                         makeText(getActivity(), "marche", LENGTH_SHORT).show();
 
@@ -157,6 +154,10 @@ listView.setOnClickListener(new View.OnClickListener() {
                 */
                 return true;
             case R.id.settings:
+                return true;
+            case R.id.Logout:
+                LoginManager.getInstance().logOut();
+                startActivity(new Intent(getContext(),Facebook.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

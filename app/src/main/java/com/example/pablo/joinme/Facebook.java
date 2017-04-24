@@ -2,6 +2,7 @@ package com.example.pablo.joinme;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
+import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import android.content.Intent;
@@ -22,6 +23,10 @@ public class Facebook extends AppCompatActivity {
         FacebookSdk.sdkInitialize(this.getApplicationContext());
         setContentView(R.layout.facebook_layout);
         initFacebook();
+        Profile profile = Profile.getCurrentProfile();
+        if (profile != null){
+            startActivity(new Intent(getBaseContext(),MainActivity.class));
+        }
     }
 
     private void initFacebook() {
