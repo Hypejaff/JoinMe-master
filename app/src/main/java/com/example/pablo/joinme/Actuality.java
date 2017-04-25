@@ -26,7 +26,6 @@ import org.json.JSONObject;
 import static android.widget.Toast.*;
 
 
-
 public class Actuality extends Fragment {
 
     private static final String URL = "https://joinme.000webhostapp.com/JoinMe-3.php";
@@ -134,10 +133,7 @@ public class Actuality extends Fragment {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                         makeText(getActivity(), "marche", LENGTH_SHORT).show();
-
-
                     }
                 });
 
@@ -153,9 +149,11 @@ listView.setOnClickListener(new View.OnClickListener() {
                 });
                 */
                 return true;
+            case R.id.profile:
+                return true;
             case R.id.settings:
                 return true;
-            case R.id.Logout:
+            case R.id.logout:
                 LoginManager.getInstance().logOut();
                 startActivity(new Intent(getContext(),Facebook.class));
                 return true;
