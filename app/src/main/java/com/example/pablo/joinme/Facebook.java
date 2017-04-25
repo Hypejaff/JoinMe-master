@@ -22,6 +22,7 @@ public class Facebook extends AppCompatActivity {
         //Facebook Initialization
         FacebookSdk.sdkInitialize(this.getApplicationContext());
         setContentView(R.layout.facebook_layout);
+        getSupportActionBar().hide();
         initFacebook();
         Profile profile = Profile.getCurrentProfile();
         if (profile != null){
@@ -43,7 +44,6 @@ public class Facebook extends AppCompatActivity {
             @Override
             public void onCancel() {
                 // App code
-                Toast.makeText(getApplicationContext(),"Cancel",Toast.LENGTH_LONG).show();
             }
             @Override
             public void onError(FacebookException error) {
