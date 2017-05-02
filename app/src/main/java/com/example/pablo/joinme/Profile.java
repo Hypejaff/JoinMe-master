@@ -13,6 +13,5 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.profile_layout);
         getSupportActionBar().hide();
         image = (ImageView) findViewById(R.id.user_picture);
-
     }
 }
